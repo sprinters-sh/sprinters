@@ -13,14 +13,24 @@ All with a simple one line change in your GitHub Actions workflow yml:
 ```yml
 runs-on: ubuntu-latest
 ```
-
-:arrow-down
-
+⬇️
 ```yml
 runs-on: sprinters:aws/123456789012:ubuntu-latest
 ```
 
+[Get started in under 5 minutes](https://console.sprinters.sh/login)
+
 ---
 © 2025 InfrastructureX GmbH
+
+<a href="/docs" target="_blank">Docs</a>
+&middot; <a href="https://sprinters.sh/docs/security">Security</a>
+&middot; <a href="https://github.com/sprinters-sh/sprinters/issues">Issues</a>
+&middot; <a href="https://x.com/sprinters_sh">𝕏</a>
+&middot; <a href="https://sprinters.sh/terms">Terms of Service</a>
+&middot; <a href="https://sprinters.sh/privacy">Privacy Policy</a>
+&middot; <a href="https://sprinters.sh/impressum">Impressum</a>
+
 Sprinters is a registered trademark of InfrastructureX GmbH
+
 Made with ♥️ in München
