@@ -23,7 +23,7 @@ runs-on: sprinters:aws/123456789012:ubuntu-latest
 ---
 © 2025 InfrastructureX GmbH
 
-<a href="/docs" target="_blank">Docs</a>
+<a href="https://sprinters.sh/docs">Docs</a>
 &middot; <a href="https://sprinters.sh/docs/security">Security</a>
 &middot; <a href="https://github.com/sprinters-sh/sprinters/issues">Issues</a>
 &middot; <a href="https://x.com/sprinters_sh">𝕏</a>
