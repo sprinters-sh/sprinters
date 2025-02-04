@@ -1,0 +1,57 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Sprinters Setup
+Parameters:
+  GitHubAccountName:
+    Description: "Your GitHub account name (ex.: my-github-org)"
+    Type: String
+    MinLength: 1
+    MaxLength: 39
+    AllowedPattern: "^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?!-)){0,38}$"
+Resources:
+  SprintersRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: sprinters-role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: 381491863103
+            Action: sts:AssumeRole
+            Condition:
+              StringEquals:
+                "sts:ExternalId": { "Ref" : "GitHubAccountName" }
+      Policies:
+        - PolicyName: sprinters-policy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Sid: Regular
+                Effect: Allow
+                Action:
+                  - ec2:RunInstances
+                  - ec2:DescribeInstances
+                  - ec2:DescribeSpotPriceHistory
+                Resource:
+                  - "*"
+              - Sid: RestrictCreateTagsToRunInstances
+                Effect: Allow
+                Action:
+                  - ec2:CreateTags
+                Resource:
+                  - "*"
+                Condition:
+                  StringEquals:
+                    "ec2:CreateAction": "RunInstances"
+              - Sid: RestrictToSprintersResources
+                Effect: Allow
+                Action:
+                  - ec2:CreateTags
+                  - ec2:ModifyVolume
+                  - ec2:TerminateInstances
+                Resource:
+                  - "*"
+                Condition:
+                  StringEquals:
+                    "aws:ResourceTag/sprinters:sprinters": "true"
