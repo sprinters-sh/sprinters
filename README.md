@@ -25,11 +25,7 @@ runs-on: sprinters:aws/123456789012:ubuntu-latest
 &middot; <a href="https://sprinters.sh/docs/security">Security</a>
 
 ![X](https://img.shields.io/badge/sprinters-white?logo=x&logoColor=black&link=https%3A%2F%2Fx.com%2Fsprinters_sh)
-&middot;
 ![Bluesky](https://img.shields.io/badge/sprinters.bsky.social-white?logo=bluesky&link=https%3A%2F%2Fbsky.app%2Fprofile%2Fsprinters.bsky.social)
-
-<a href="https://x.com/sprinters_sh">𝕏</a>
-&middot; <a href="https://bsky.app/profile/sprinters.bsky.social"><img src="https://sprinters.sh/assets/bluesky-logo.svg" height="20" style="margin-top: -3px"></a>
 
 ---
 © 2025 InfrastructureX GmbH
