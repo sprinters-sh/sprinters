@@ -1,4 +1,5 @@
-# Sprinters [![X](https://img.shields.io/badge/sprinters-white?logo=x&logoColor=black)](https://x.com/sprinters_sh) [![Bluesky](https://img.shields.io/badge/sprinters.bsky.social-white?logo=bluesky)](https://bsky.app/profile/sprinters.bsky.social)
+# Sprinters
+[![X](https://img.shields.io/badge/sprinters-white?logo=x&logoColor=black)](https://x.com/sprinters_sh) [![Bluesky](https://img.shields.io/badge/sprinters.bsky.social-white?logo=bluesky)](https://bsky.app/profile/sprinters.bsky.social)
 
 ![Sprinters Logo ](https://sprinters.sh/assets/logo/sprinters-text-inverted.svg)
 
