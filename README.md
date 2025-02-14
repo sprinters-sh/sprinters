@@ -28,7 +28,6 @@ runs-on: sprinters:aws/123456789012:ubuntu-latest
 [![X](https://img.shields.io/badge/sprinters-white?logo=x&logoColor=black)](https://x.com/sprinters_sh)
 [![Bluesky](https://img.shields.io/badge/sprinters.bsky.social-white?logo=bluesky)](https://bsky.app/profile/sprinters.bsky.social)
 
----
 © 2025 InfrastructureX GmbH
 
 <a href="https://sprinters.sh/terms">Terms of Service</a>
