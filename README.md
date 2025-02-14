@@ -24,6 +24,7 @@ runs-on: sprinters:aws/123456789012:ubuntu-latest
 &middot; <a href="https://sprinters.sh/docs">Docs</a>
 &middot; <a href="https://sprinters.sh/docs/security">Security</a>
 
+---
 [![X](https://img.shields.io/badge/sprinters-white?logo=x&logoColor=black)](https://x.com/sprinters_sh)
 [![Bluesky](https://img.shields.io/badge/sprinters.bsky.social-white?logo=bluesky)](https://bsky.app/profile/sprinters.bsky.social)
 
