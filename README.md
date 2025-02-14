@@ -23,7 +23,10 @@ runs-on: sprinters:aws/123456789012:ubuntu-latest
 <a href="https://sprinters.sh/new">What's new?</a>
 &middot; <a href="https://sprinters.sh/docs">Docs</a>
 &middot; <a href="https://sprinters.sh/docs/security">Security</a>
-&middot; <a href="https://github.com/sprinters-sh/sprinters/issues">Issues</a>
+
+![X](https://img.shields.io/badge/sprinters-white?logo=x&link=https%3A%2F%2Fx.com%2Fsprinters_sh)
+&middot;
+![Bluesky](https://img.shields.io/badge/sprinters.bsky.social-white?logo=bluesky&link=https%3A%2F%2Fbsky.app%2Fprofile%2Fsprinters.bsky.social)
 
 <a href="https://x.com/sprinters_sh">𝕏</a>
 &middot; <a href="https://bsky.app/profile/sprinters.bsky.social"><img src="https://sprinters.sh/assets/bluesky-logo.svg" height="20" style="margin-top: -3px"></a>
