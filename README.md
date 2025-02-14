@@ -23,10 +23,12 @@ runs-on: sprinters:aws/123456789012:ubuntu-latest
 ---
 © 2025 InfrastructureX GmbH
 
-<a href="https://sprinters.sh/docs">Docs</a>
+<a href="https://sprinters.sh/new">What's new?</a>
+&middot; <a href="https://sprinters.sh/docs">Docs</a>
 &middot; <a href="https://sprinters.sh/docs/security">Security</a>
 &middot; <a href="https://github.com/sprinters-sh/sprinters/issues">Issues</a>
 &middot; <a href="https://x.com/sprinters_sh">𝕏</a>
+&middot; <a href="https://bsky.app/profile/sprinters.bsky.social"><img src="https://sprinters.sh/assets/bluesky-logo.svg" height="20" style="margin-top: -3px"></a>
 &middot; <a href="https://sprinters.sh/terms">Terms of Service</a>
 &middot; <a href="https://sprinters.sh/privacy">Privacy Policy</a>
 &middot; <a href="https://sprinters.sh/impressum">Impressum</a>
