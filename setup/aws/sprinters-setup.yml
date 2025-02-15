@@ -35,6 +35,7 @@ Resources:
                   - ec2:RunInstances
                   - ec2:DescribeInstances
                   - ec2:DescribeSpotPriceHistory
+                  - iam:PassRole
                 Resource:
                   - "*"
               - Sid: RestrictCreateTagsToRunInstances
