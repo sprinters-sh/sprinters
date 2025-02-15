@@ -26,22 +26,24 @@ Resources:
                 "sts:ExternalId": { "Ref" : "GitHubAccountName" }
       Policies:
         - PolicyName: sprinters-policy
+          # Sprinters strictly adheres to the principle of least-privilege and
+          # only requests this absolute minimum set of permissions to be able to operate:
           PolicyDocument:
             Version: "2012-10-17"
             Statement:
               - Sid: Regular
                 Effect: Allow
                 Action:
-                  - ec2:RunInstances
-                  - ec2:DescribeInstances
-                  - ec2:DescribeSpotPriceHistory
-                  - iam:PassRole
+                  - ec2:RunInstances             # Launch ephemeral EC2 instances for your runners
+                  - ec2:DescribeInstances        # List runner EC2 instances and check whether they are running
+                  - ec2:DescribeSpotPriceHistory # Automatically select cheapest availability zone for spot instances and calculate savings
+                  - iam:PassRole                 # Enable runner EC2 instances to use IAM instance profiles
                 Resource:
                   - "*"
               - Sid: RestrictCreateTagsToRunInstances
                 Effect: Allow
                 Action:
-                  - ec2:CreateTags
+                  - ec2:CreateTags               # Tag those EC2 instances as runners
                 Resource:
                   - "*"
                 Condition:
@@ -50,9 +52,9 @@ Resources:
               - Sid: RestrictToSprintersResources
                 Effect: Allow
                 Action:
-                  - ec2:CreateTags
-                  - ec2:ModifyVolume
-                  - ec2:TerminateInstances
+                  - ec2:CreateTags               # Tag those EC2 instances as runners
+                  - ec2:ModifyVolume             # Optimize boot speed of runner EC2 instances
+                  - ec2:TerminateInstances       # Clean up runner EC2 instances in case they fail to gracefully shut down
                 Resource:
                   - "*"
                 Condition:
