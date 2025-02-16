@@ -43,7 +43,7 @@ Resources:
               - Sid: RestrictCreateTagsToRunInstances
                 Effect: Allow
                 Action:
-                  - ec2:CreateTags               # Tag those EC2 instances as runners
+                  - ec2:CreateTags               # Let EC2 tag instances and their volumes on launch as runners
                 Resource:
                   - "*"
                 Condition:
@@ -52,7 +52,7 @@ Resources:
               - Sid: RestrictToSprintersResources
                 Effect: Allow
                 Action:
-                  - ec2:CreateTags               # Tag those EC2 instances as runners
+                  - ec2:CreateTags               # Tag runners with the job they currently process
                   - ec2:ModifyVolume             # Optimize boot speed of runner EC2 instances
                   - ec2:TerminateInstances       # Clean up runner EC2 instances in case they fail to gracefully shut down
                 Resource:
