@@ -1,0 +1,23 @@
+name: benchmarks/spring-boot
+on: workflow_dispatch
+
+jobs:
+  benchmark:
+    runs-on: ${{ matrix.image }}
+    timeout-minutes: 30
+
+    strategy:
+      matrix:
+        image:
+          - ubuntu-latest
+          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: spring-projects/spring-boot
+          ref: v3.4.4
+
+      - name: Build
+        run: ./gradlew build
