@@ -1,0 +1,28 @@
+name: benchmarks/linux
+on: workflow_dispatch
+
+jobs:
+  benchmark:
+    runs-on: ${{ matrix.image }}
+    timeout-minutes: 360
+
+    strategy:
+      matrix:
+        image:
+          - ubuntu-latest
+          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest
+          - sprinters:aws:c7i-flex.4xlarge:ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: torvalds/linux
+          ref: v6.14
+
+      - name: Build
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libelf-dev bc
+          make allyesconfig
+          make -j"$(nproc)"
