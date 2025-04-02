@@ -11,7 +11,7 @@ jobs:
       matrix:
         image:
           - ubuntu-latest
-          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest:temp=20
+          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest:temp=20:swap=16
           - sprinters:aws:c7i-flex.4xlarge:ubuntu-latest:temp=20
 
     steps:
@@ -26,6 +26,32 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libelf-dev bc gawk
           make allyesconfig
+          make -j"$(nproc)"
+
+  def:
+    runs-on: ${{ matrix.image }}
+    timeout-minutes: 300
+
+    strategy:
+      fail-fast: false
+      matrix:
+        image:
+          - ubuntu-latest
+          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest:temp=20
+          - sprinters:aws:c7i-flex.4xlarge:ubuntu-latest:temp=20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: torvalds/linux
+          ref: v6.14
+
+      - name: Build
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libelf-dev bc gawk
+          make defconfig
           make -j"$(nproc)"
 
   all-no:
