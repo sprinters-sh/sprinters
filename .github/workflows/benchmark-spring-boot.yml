@@ -7,10 +7,12 @@ jobs:
     timeout-minutes: 30
 
     strategy:
+      fail-fast: false
       matrix:
         image:
           - ubuntu-latest
           - sprinters:aws:m7i-flex.xlarge:ubuntu-latest
+          - sprinters:aws:c7i-flex.4xlarge:ubuntu-latest
 
     steps:
       - name: Checkout

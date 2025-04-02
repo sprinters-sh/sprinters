@@ -4,14 +4,15 @@ on: workflow_dispatch
 jobs:
   benchmark:
     runs-on: ${{ matrix.image }}
-    timeout-minutes: 360
+    timeout-minutes: 300
 
     strategy:
+      fail-fast: false
       matrix:
         image:
           - ubuntu-latest
-          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest
-          - sprinters:aws:c7i-flex.4xlarge:ubuntu-latest
+          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest:temp=20
+          - sprinters:aws:c7i-flex.4xlarge:ubuntu-latest:temp=20
 
     steps:
       - name: Checkout
@@ -23,6 +24,6 @@ jobs:
       - name: Build
         run: |
           sudo apt-get update
-          sudo apt-get install -y libelf-dev bc
+          sudo apt-get install -y libelf-dev bc gawk
           make allyesconfig
           make -j"$(nproc)"
