@@ -11,7 +11,7 @@ jobs:
       matrix:
         image:
           - ubuntu-latest
-          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest:temp=20:swap=16
+          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest:temp=20
           - sprinters:aws:c7i-flex.4xlarge:ubuntu-latest:temp=20
 
     steps:
@@ -37,8 +37,8 @@ jobs:
       matrix:
         image:
           - ubuntu-latest
-          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest:temp=20
-          - sprinters:aws:c7i-flex.4xlarge:ubuntu-latest:temp=20
+          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest
+          - sprinters:aws:c7i-flex.4xlarge:ubuntu-latest
 
     steps:
       - name: Checkout
@@ -63,8 +63,8 @@ jobs:
       matrix:
         image:
           - ubuntu-latest
-          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest:temp=20
-          - sprinters:aws:c7i-flex.4xlarge:ubuntu-latest:temp=20
+          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest
+          - sprinters:aws:c7i-flex.4xlarge:ubuntu-latest
 
     steps:
       - name: Checkout
