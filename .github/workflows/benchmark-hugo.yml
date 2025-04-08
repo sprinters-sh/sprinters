@@ -37,7 +37,7 @@ jobs:
           mkdir -p /home/runner/work/gohugoio
           ln -s /home/runner/work/sprinters-internal-test/sprinters-internal-test /home/runner/work/gohugoio/hugo
 
-      - if: matrix.os == 'ubuntu-latest'
+      - if: matrix.image == 'ubuntu-latest'
         name: Free Disk Space (Ubuntu)
         uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # v1.3.1
         with:
