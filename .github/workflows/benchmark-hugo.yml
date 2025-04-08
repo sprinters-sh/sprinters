@@ -35,7 +35,7 @@ jobs:
       - name: Adjust checkout dir
         run: |
           mkdir -p /home/runner/work/gohugoio
-          ln -s /home/runner/work/$GITHUB_REPOSITORY /home/runner/work/gohugoio/hugo
+          ln -s /home/runner/work/sprinters/sprinters /home/runner/work/gohugoio/hugo
 
       - if: matrix.image == 'ubuntu-latest'
         name: Free Disk Space (Ubuntu)
