@@ -1,0 +1,49 @@
+name: benchmarks/django
+on: workflow_dispatch
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ${{ matrix.image }}
+    timeout-minutes: 300
+
+    strategy:
+      fail-fast: false
+      matrix:
+        image:
+          - ubuntu-latest
+          - sprinters:aws:m7i-flex.xlarge:ubuntu-latest
+          - sprinters:aws:c7i-flex.4xlarge:ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: django/django
+          ref: 5.2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.13
+
+      - name: Install and upgrade packaging tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install libmemcached-dev
+          python -m pip install --upgrade pip setuptools wheel
+
+      - run: python -m pip install -r tests/requirements/py3.txt -e .
+
+      - name: Run tests
+        run: python -Wall tests/runtests.py -v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm install
+      - run: npm test
